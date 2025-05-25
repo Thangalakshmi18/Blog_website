@@ -1,0 +1,285 @@
+/* static/style.css */
+
+/* Fonts */
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f2f5;
+    color: #333;
+    line-height: 1.6;
+    overflow-x: hidden; /* Prevent horizontal scroll due to animations */
+}
+
+/* Background Overlay for subtle effect */
+.background-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #FF6B6B 0%, #FFE66D 100%); /* Warm, inviting gradient */
+    opacity: 0.1; /* Subtle overlay */
+    z-index: -1;
+}
+
+/* Header */
+header {
+    text-align: center;
+    padding: 100px 20px 50px;
+    background-color: #ffffff; /* White background for contrast */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 1;
+}
+
+header h1 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 4em;
+    color: #FF6B6B; /* A warm, inviting color */
+    margin-bottom: 10px;
+}
+
+header .subtitle {
+    font-size: 1.2em;
+    color: #666;
+}
+
+/* Content Sections */
+.content-section {
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 40px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    opacity: 0; /* Hidden by default for JS animation */
+    transform: translateY(20px); /* Slightly off for slide-in */
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.content-section.fade-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.content-section h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.5em;
+    color: #34495e;
+    margin-bottom: 30px;
+}
+
+.content-section p {
+    font-size: 1.1em;
+    color: #555;
+    line-height: 1.8;
+    max-width: 700px;
+    margin: 0 auto 20px;
+}
+
+/* Memories Grid */
+.memory-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.memory-card {
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    cursor: pointer;
+    perspective: 1000px; /* For 3D flip effect */
+    height: 350px; /* Fixed height for consistency */
+    position: relative; /* Needed for positioning card-front/back */
+    transition: transform 0.6s ease-in-out; /* For reveal-on-scroll */
+    transform: translateY(30px); /* Initial state for reveal-on-scroll */
+    opacity: 0; /* Initial state for reveal-on-scroll */
+}
+
+.memory-card.active {
+    transform: rotateY(180deg); /* Flip on Y-axis */
+}
+
+.memory-card.is-visible { /* Class added by JS for scroll animation */
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden; /* Hide the back when rotated */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    box-sizing: border-box;
+    transition: transform 0.6s ease-in-out;
+}
+
+.card-front {
+    background-color: #fff;
+    transform: rotateY(0deg);
+}
+
+.memory-card.active .card-front {
+    transform: rotateY(180deg);
+}
+
+.card-front img {
+    width: 100%;
+    height: 180px; /* Fixed height for images */
+    object-fit: cover; /* Cover the area, crop if needed */
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.card-front h3 {
+    font-size: 1.4em;
+    color: #34495e;
+    margin: 0;
+}
+
+.card-back {
+    background-color: #FFEDD8; /* A soft, warm color for the back */
+    transform: rotateY(-180deg); /* Initial rotation for the back */
+}
+
+.memory-card.active .card-back {
+    transform: rotateY(0deg);
+}
+
+.card-back p {
+    font-size: 1em;
+    color: #666;
+    margin: 0;
+}
+
+/* Qualities List */
+.qualities-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 40px;
+}
+
+.quality-item {
+    background-color: #E6F7FF; /* Light blue for qualities */
+    color: #2980b9;
+    padding: 12px 25px;
+    margin: 10px auto;
+    border-radius: 25px;
+    font-size: 1.1em;
+    font-weight: bold;
+    display: inline-block; /* Allows items to sit next to each other */
+    opacity: 0; /* Hidden for JS animation */
+    transform: scale(0.8); /* Smaller for scale-in animation */
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.quality-item.is-visible { /* Class added by JS for scroll animation */
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Final Message */
+.final-message {
+    background-color: #FFF3E0; /* Light orange/peach for the final message */
+    padding: 50px;
+    margin-bottom: 50px;
+}
+
+.final-message h2 {
+    color: #E67E22; /* A warm orange */
+}
+
+.final-message p {
+    font-size: 1.2em;
+    margin-bottom: 25px;
+}
+
+.signature {
+    margin-top: 30px;
+    text-align: right;
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.8em;
+    color: #FF6B6B;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 30px;
+    background-color: #333;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9em;
+}
+
+/* Animations (applied by JS) */
+.fade-in {
+    animation: fadeIn 2s ease-out forwards;
+}
+
+.slide-in-from-top {
+    animation: slideInFromTop 1s ease-out forwards;
+}
+
+.slide-in-from-bottom {
+    animation: slideInFromBottom 1s ease-out forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideInFromTop {
+    from { transform: translateY(-50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes slideInFromBottom {
+    from { transform: translateY(50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 3em;
+    }
+    .content-section {
+        padding: 25px;
+        margin: 30px auto;
+    }
+    .content-section h2 {
+        font-size: 2em;
+    }
+    .memory-grid {
+        grid-template-columns: 1fr; /* Single column on small screens */
+    }
+    .memory-card {
+        height: 320px;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 2.5em;
+    }
+    .content-section p {
+        font-size: 1em;
+    }
+    .quality-item {
+        font-size: 1em;
+        padding: 10px 20px;
+    }
+}

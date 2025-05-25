@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For [Crush's Name] ❤️</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background-overlay"></div>
+
+    <header class="fade-in">
+        <h1>Hello, [Crush's Name]!</h1>
+        <p class="subtitle">A little something for you...</p>
+    </header>
+
+    <section id="introduction" class="content-section slide-in-from-top">
+        <h2>Welcome to Our Little Corner!</h2>
+        <p>I built this small space to celebrate some of the moments and things that make you so special to me. Every moment spent with you is a cherished memory.</p>
+        <p>Click around and explore!</p>
+    </section>
+
+    <section id="memories" class="content-section">
+        <h2>Our Shared Moments</h2>
+        <div class="memory-grid">
+            <div class="memory-card reveal-on-scroll">
+                <div class="card-front">
+                    <img src="https://via.placeholder.com/200/FF5733/FFFFFF?text=Memory+1+Pic" alt="Memory 1">
+                    <h3>The Day We Met</h3>
+                </div>
+                <div class="card-back">
+                    <p>Remember that sunny afternoon at [Specific Place, e.g., Anna Salai Park] in Madurai? I still remember your smile and how comfortable it felt from the very first moment.</p>
+                </div>
+            </div>
+
+            <div class="memory-card reveal-on-scroll">
+                <div class="card-front">
+                    <img src="https://via.placeholder.com/200/33FF57/FFFFFF?text=Memory+2+Pic" alt="Memory 2">
+                    <h3>Our Coffee Adventures</h3>
+                </div>
+                <div class="card-back">
+                    <p>Those long chats over coffee at [Favorite Coffee Shop] are some of my favorite. Your insights always amaze me.</p>
+                </div>
+            </div>
+
+            <div class="memory-card reveal-on-scroll">
+                <div class="card-front">
+                    <img src="https://via.placeholder.com/200/3357FF/FFFFFF?text=Memory+3+Pic" alt="Memory 3">
+                    <h3>That Time We Laughed Until We Cried</h3>
+                </div>
+                <div class="card-back">
+                    <p>Remember [describe a specific funny incident]? My stomach still hurts thinking about how much we laughed that day.</p>
+                </div>
+            </div>
+
+            <div class="memory-card reveal-on-scroll">
+                <div class="card-front">
+                    <img src="https://via.placeholder.com/200/F333FF/FFFFFF?text=Memory+4+Pic" alt="Memory 4">
+                    <h3>Our Walk by the Vaigai River</h3>
+                </div>
+                <div class="card-back">
+                    <p>That serene evening walk along the Vaigai River was perfect. Just talking about everything and nothing. Truly special.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="qualities" class="content-section">
+        <h2>Things I Admire About You</h2>
+        <ul class="qualities-list">
+            <li class="quality-item reveal-on-scroll">Your incredible kindness</li>
+            <li class="quality-item reveal-on-scroll">Your infectious laugh</li>
+            <li class="quality-item reveal-on-scroll">Your passion for [their hobby/interest]</li>
+            <li class="quality-item reveal-on-scroll">Your insightful perspectives</li>
+            <li class="quality-item reveal-on-scroll">Your unwavering determination</li>
+            </ul>
+    </section>
+
+    <section id="message" class="content-section final-message slide-in-from-bottom">
+        <h2>A Little Message</h2>
+        <p>Building this website has been a small way for me to express how much I cherish our time together. You bring so much light into my life, and I'm incredibly grateful for every moment. </p>
+        <p>Thank you for being you, [Crush's Name]. ❤️</p>
+        <div class="signature">
+            <p>- [Your Name]</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>Made with care and a little bit of Python magic.</p>
+    </footer>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
