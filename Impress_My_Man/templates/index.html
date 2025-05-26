@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>For [Crush's Name] ❤️</title>
+    <title>For My Man ❤️❤️</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 </head>
@@ -11,14 +11,13 @@
     <div class="background-overlay"></div>
 
     <header class="fade-in">
-        <h1>Hello, [Crush's Name]!</h1>
+        <h1>Dear Love,</h1>
         <p class="subtitle">A little something for you...</p>
     </header>
 
     <section id="introduction" class="content-section slide-in-from-top">
         <h2>Welcome to Our Little Corner!</h2>
         <p>I built this small space to celebrate some of the moments and things that make you so special to me. Every moment spent with you is a cherished memory.</p>
-        <p>Click around and explore!</p>
     </section>
 
     <section id="memories" class="content-section">
@@ -26,7 +25,7 @@
         <div class="memory-grid">
             <div class="memory-card reveal-on-scroll">
                 <div class="card-front">
-                    <img src="https://via.placeholder.com/200/FF5733/FFFFFF?text=Memory+1+Pic" alt="Memory 1">
+                    <img src= "{{ url_for('static', filename='images/My_first_image.jpg')}}"alt="Memory 1">
                     <h3>The Day We Met</h3>
                 </div>
                 <div class="card-back">
